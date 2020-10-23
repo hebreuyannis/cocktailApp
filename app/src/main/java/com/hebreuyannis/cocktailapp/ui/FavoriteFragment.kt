@@ -17,7 +17,6 @@ class FavoriteFragment : MainNavigationFragment() {
     ): View? {
         return inflater.inflate(R.layout.layout_favorite, container, false)
     }
-    var toogle = true
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
