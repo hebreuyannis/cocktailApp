@@ -41,6 +41,7 @@ ext {
 dependencies {
 
     implementation project(':domain')
+    implementation project(':data-remote')
 
     implementation domainDependencies.kotlin
     implementation appDependencies.navigationFragment
@@ -49,10 +50,17 @@ dependencies {
     implementation appDependencies.appCompat
     implementation appDependencies.material
 
+    implementation appDependencies.daggerAnd
+    implementation appDependencies.daggerAndSupport
+    kapt appDependencies.daggerKaptprocessor
+    kapt appDependencies.daggerKaptcompiler
+
 
     // Testing Navigation
     androidTestImplementation testDependencies.navigationFragmentTest
     testImplementation testDependencies.junit
     androidTestImplementation testDependencies.junitDx
     androidTestImplementation testDependencies.espresso
+    kaptAndroidTest testDependencies.daggerKaptProcessorTest
+    kaptAndroidTest testDependencies.daggerKaptCompilerTest
 }

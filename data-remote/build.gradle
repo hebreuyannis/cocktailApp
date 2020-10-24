@@ -5,8 +5,10 @@ plugins {
 
 dependencies {
 
-    api domainDependencies.kotlin
-    api domainDependencies.coroutinesCore
+    implementation project(':domain')
+
+    api dataDependencies.retrofit
+    api dataDependencies.moshiConverter
 }
 
 sourceCompatibility = JavaVersion.VERSION_1_8.toString()
