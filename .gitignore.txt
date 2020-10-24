@@ -6,6 +6,9 @@
 *.exe
 *.o
 *.so
+*.bin
+*.ser
+.idea/*
 
 # Packages #
 ############

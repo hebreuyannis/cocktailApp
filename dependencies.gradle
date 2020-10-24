@@ -1,0 +1,34 @@
+
+ext {
+    kotlinVersion ='1.4.10'
+    coroutines = '1.3.7'
+    materialVersion = "1.3.0-alpha03"
+    nav_version = "2.3.1"
+    androidxCoreKtxVersion = '1.3.2'
+    appcompatVersion = '1.2.0'
+    constraintlayoutVersion = '2.0.2'
+
+
+appDependencies = [
+        navigationFragment : "androidx.navigation:navigation-fragment-ktx:$nav_version",
+        navigationUi       : "androidx.navigation:navigation-ui-ktx:$nav_version",
+        androidxKtx        : "androidx.core:core-ktx:$androidxCoreKtxVersion",
+        appCompat          : "androidx.appcompat:appcompat:$appcompatVersion",
+        material           : "com.google.android.material:material:$materialVersion",
+        constraintLayout   : "androidx.constraintlayout:constraintlayout:$constraintlayoutVersion"
+
+]
+
+domainDependencies = [
+        kotlin        : "org.jetbrains.kotlin:kotlin-stdlib:$kotlinVersion",
+        coroutinesCore: "org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutines"
+]
+
+testDependencies = [
+        navigationFragmentTest  : "androidx.navigation:navigation-testing:$nav_version",
+        junit                   : 'junit:junit:4.+',
+        junitDx                 : 'androidx.test.ext:junit:1.1.2',
+        espresso                : 'androidx.test.espresso:espresso-core:3.3.0'
+]
+
+}
