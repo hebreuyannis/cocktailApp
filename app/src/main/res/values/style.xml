@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Caption">
+        <item name="android:fontFamily">@font/roboto_regular</item>
+        <item name="android:textSize">@dimen/caption</item>
+    </style>
+
+    <style name="Body">
+        <item name="android:fontFamily">@font/roboto_regular</item>
+        <item name="android:textSize">@dimen/body</item>
+    </style>
+
+    <style name="Headline">
+        <item name="android:fontFamily">@font/roboto_bold</item>
+        <item name="android:textSize">@dimen/headline_H6</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <style name="Subtitle">
+        <item name="android:fontFamily">@font/roboto_medium</item>
+        <item name="android:textSize">@dimen/subtitle</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+</resources>
