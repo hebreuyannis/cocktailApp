@@ -60,6 +60,7 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" exported="" name="Gradle: CocktailApp.data-remote.data-remote" level="project" />
     <orderEntry type="module" module-name="CocktailApp.domain" />
     <orderEntry type="module-library">
       <library name="Gradle: com.squareup.retrofit2:converter-moshi:2.7.0">

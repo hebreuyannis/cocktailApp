@@ -15,12 +15,11 @@
 
     <TextView
         android:id="@+id/title_favorite"
+        style="@style/Subtitle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:layout_weight="1"
-        style="@style/Subtitle"
-        android:text="TextView"
         android:textAlignment="center" />
 
 

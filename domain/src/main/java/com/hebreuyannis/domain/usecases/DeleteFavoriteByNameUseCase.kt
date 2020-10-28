@@ -6,7 +6,8 @@ import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
 
-class DeleteFavoriteByNameUseCase(ioDispatcher: CoroutineDispatcher,
+class DeleteFavoriteByNameUseCase(
+    ioDispatcher: CoroutineDispatcher,
     private val favoritesRepository: IFavoriteRepository
 ) : FlowUseCase<String, Int>(ioDispatcher) {
 

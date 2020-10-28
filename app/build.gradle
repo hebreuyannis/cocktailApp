@@ -3,6 +3,7 @@ plugins {
     id("kotlin-android")
     id("kotlin-android-extensions")
     id("kotlin-kapt")
+    id("androidx.navigation.safeargs")
 }
 
 android {
@@ -55,6 +56,8 @@ dependencies {
     kapt appDependencies.daggerKaptprocessor
     kapt appDependencies.daggerKaptcompiler
 
+    implementation appDependencies.glide
+    kapt appDependencies.glideKaptCompiler
 
     // Testing Navigation
     androidTestImplementation testDependencies.navigationFragmentTest

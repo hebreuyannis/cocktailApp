@@ -31,7 +31,7 @@ interface NavigationDestination {
  */
 open class MainNavigationFragment : Fragment(), NavigationDestination {
 
-    protected var navigationHost: NavigationHost? = null
+    private var navigationHost: NavigationHost? = null
 
 
     override fun onAttach(context: Context) {

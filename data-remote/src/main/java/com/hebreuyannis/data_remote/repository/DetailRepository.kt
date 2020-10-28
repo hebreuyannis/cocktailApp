@@ -1,3 +1,5 @@
+@file:Suppress("BlockingMethodInNonBlockingContext")
+
 package com.hebreuyannis.data_remote.repository
 
 import com.hebreuyannis.data_remote.api.CocktailApiService
@@ -15,8 +17,9 @@ class DetailRepository(private val apiService: CocktailApiService) : IDetailRepo
             emit(Result.Loading)
             val listIngredients = ArrayList<Ingredient>()
             for (ingredient in ingredients) {
-                val ingredientRresponse = apiService.searchIngredientByName(ingredient)
-                listIngredients.add(ingredientRresponse.toDomain())
+                val callable = apiService.searchIngredientByName(ingredient)
+                val ingredientRresponse = callable.execute()
+                listIngredients.add(ingredientRresponse.body()!!.toDomain())
             }
             emit(Result.Success(listIngredients))
         }
