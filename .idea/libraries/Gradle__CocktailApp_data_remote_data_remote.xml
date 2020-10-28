@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="Gradle: CocktailApp.data-remote.data-remote">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/data-remote/build/libs/data-remote.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

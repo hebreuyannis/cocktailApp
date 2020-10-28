@@ -4,10 +4,10 @@
         android:id="@+id/navigation_home"
         android:enabled="true"
         android:icon="@drawable/ic_home"
-        android:title="home" />
+        android:title="@string/home" />
     <item
         android:id="@+id/navigation_favorite"
         android:enabled="true"
         android:icon="@drawable/ic_fav"
-        android:title="favorite" />
+        android:title="@string/favorite" />
 </menu>

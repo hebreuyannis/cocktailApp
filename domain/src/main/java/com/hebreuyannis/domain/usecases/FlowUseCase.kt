@@ -1,10 +1,10 @@
 package com.hebreuyannis.domain.usecases
 
+import com.hebreuyannis.domain.models.Result
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.catch
 import kotlinx.coroutines.flow.flowOn
-import com.hebreuyannis.domain.models.Result
 
 
 abstract class FlowUseCase<in Parameter, R>(private val coroutineDispatcher: CoroutineDispatcher) {

@@ -12,7 +12,12 @@
         tools:layout="@layout/layout_home">
         <action
             android:id="@+id/action_navigation_home_to_navigation_drink_detail"
-            app:destination="@id/navigation_drink_detail" />
+            app:destination="@id/navigation_drink_detail">
+
+            <argument
+                android:name="drinkPresentation"
+                app:argType="com.hebreuyannis.cocktailapp.models.DrinkPresentation" />
+        </action>
     </fragment>
 
     <fragment
@@ -29,5 +34,9 @@
         android:id="@+id/navigation_drink_detail"
         android:name="com.hebreuyannis.cocktailapp.ui.DrinkDetailFragment"
         android:label="DrinkDetailFragment"
-        tools:layout="@layout/layout_detail_drink" />
+        tools:layout="@layout/layout_detail_drink">
+        <argument
+            android:name="drinkPresentation"
+            app:argType="com.hebreuyannis.cocktailapp.models.DrinkPresentation" />
+    </fragment>
 </navigation>

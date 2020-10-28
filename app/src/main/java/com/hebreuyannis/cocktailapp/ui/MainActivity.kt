@@ -1,26 +1,26 @@
 package com.hebreuyannis.cocktailapp.ui
 
-import android.app.SearchManager
 import android.os.Bundle
 import android.view.View
 import android.view.animation.Animation
 import android.view.animation.AnimationUtils
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
-import androidx.core.content.ContextCompat
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.NavigationUI
 import androidx.navigation.ui.setupWithNavController
+import com.hebreuyannis.cocktailapp.CocktailApplication
 import com.hebreuyannis.cocktailapp.R
 import kotlinx.android.synthetic.main.activity_main.*
 
 
-class MainActivity : AppCompatActivity(), NavigationHost,BottomBarBehavior {
+class MainActivity : AppCompatActivity(), NavigationHost, BottomBarBehavior {
 
     private lateinit var navController: NavController
     private var navHostFragment: NavHostFragment? = null
+
 
     companion object {
         private val TOP_LEVEL_DESTINATIONS = setOf(
@@ -30,7 +30,9 @@ class MainActivity : AppCompatActivity(), NavigationHost,BottomBarBehavior {
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        (application as CocktailApplication).appComponent.inject(this)
         super.onCreate(savedInstanceState)
+
         setContentView(R.layout.activity_main)
         setupNavigation()
     }
@@ -55,14 +57,16 @@ class MainActivity : AppCompatActivity(), NavigationHost,BottomBarBehavior {
             applicationContext,
             R.anim.slide_up
         )
-        slideUp.setAnimationListener(object : Animation.AnimationListener{
+        slideUp.setAnimationListener(object : Animation.AnimationListener {
             override fun onAnimationStart(animation: Animation?) {
                 bottom_bar.visibility = View.GONE
             }
+
             override fun onAnimationEnd(animation: Animation?) {
                 bottom_bar.clearAnimation()
                 bottom_bar.visibility = View.VISIBLE
             }
+
             override fun onAnimationRepeat(animation: Animation?) = Unit
         })
 
@@ -74,16 +78,23 @@ class MainActivity : AppCompatActivity(), NavigationHost,BottomBarBehavior {
             applicationContext,
             R.anim.slide_down
         )
-        slideDown.setAnimationListener(object : Animation.AnimationListener{
+        slideDown.setAnimationListener(object : Animation.AnimationListener {
             override fun onAnimationStart(animation: Animation?) {
                 bottom_bar.visibility = View.VISIBLE
             }
+
             override fun onAnimationEnd(animation: Animation?) {
                 bottom_bar.clearAnimation()
                 bottom_bar.visibility = View.GONE
             }
+
             override fun onAnimationRepeat(animation: Animation?) = Unit
         })
         bottom_bar.startAnimation(slideDown)
     }
+
+    fun forceVisibleBottomBar() {
+        bottom_bar.visibility = View.VISIBLE
+    }
+
 }

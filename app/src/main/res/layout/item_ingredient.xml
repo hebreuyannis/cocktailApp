@@ -8,28 +8,18 @@
 
     <ImageView
         android:id="@+id/image_ingrediant"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
         android:contentDescription="@string/ingredient"
         tools:srcCompat="@tools:sample/avatars" />
 
     <TextView
         android:id="@+id/title_ingredient"
+        style="@style/Subtitle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginTop="12dp"
-        android:text="TextView"
-        style="@style/Subtitle"
         android:textAlignment="center" />
-
-    <TextView
-        android:id="@+id/caption_ingredient"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        style="@style/Caption"
-        android:text="TextView" />
-
 
 </LinearLayout>

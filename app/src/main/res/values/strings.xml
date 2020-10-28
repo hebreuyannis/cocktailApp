@@ -2,4 +2,11 @@
     <string name="app_name">CocktailApp</string>
     <string name="ingredient">ingredient</string>
     <string name="search">search</string>
+    <string name="category">Category: %1$s</string>
+    <string name="generic_issue">An issue has occurred</string>
+    <string name="loading_issue">A loading issue has occurred</string>
+    <string name="network_issue">A network issue has occurred</string>
+    <string name="retry">RETRY</string>
+    <string name="home">home</string>
+    <string name="favorite">favorite</string>
 </resources>
