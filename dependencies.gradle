@@ -12,11 +12,12 @@ ext {
     moshiConverterVersion = '2.7.0'
     daggerVersion = "2.27"
     glideVersion = "4.11.0"
+    room_version = '2.2.5'
 
 
     appDependencies = [
             navigationFragment : "androidx.navigation:navigation-fragment-ktx:$nav_version",
-            navigationArgs     :"androidx.navigation:navigation-safe-args-gradle-plugin:$nav_version",
+            navigationArgs     : "androidx.navigation:navigation-safe-args-gradle-plugin:$nav_version",
             navigationUi       : "androidx.navigation:navigation-ui-ktx:$nav_version",
             androidxKtx        : "androidx.core:core-ktx:$androidxCoreKtxVersion",
             appCompat          : "androidx.appcompat:appcompat:$appcompatVersion",
@@ -36,8 +37,10 @@ ext {
             okhttp           : "com.squareup.okhttp3:okhttp:$okHttpVersion",
             retrofit         : "com.squareup.retrofit2:retrofit:$retrofitVersion",
             moshiConverter   : "com.squareup.retrofit2:converter-moshi:$moshiConverterVersion",
+            roomRuntime      : "androidx.room:room-runtime:$room_version",
+            roomCompiler     : "androidx.room:room-compiler:$room_version",
+            roomKtx          : "androidx.room:room-ktx:$room_version",
             retrofitCoroutine: "com.jakewharton.retrofit:retrofit2-kotlin-coroutines-adapter:$retrofitCoroutinesAdapter"
-
     ]
 
     domainDependencies = [
@@ -51,7 +54,8 @@ ext {
             junitDx                : 'androidx.test.ext:junit:1.1.2',
             espresso               : 'androidx.test.espresso:espresso-core:3.3.0',
             daggerKaptProcessorTest: "com.google.dagger:dagger-android-processor:$daggerVersion",
-            daggerKaptCompilerTest : "com.google.dagger:dagger-compiler:$daggerVersion"
+            daggerKaptCompilerTest : "com.google.dagger:dagger-compiler:$daggerVersion",
+            roomTest               : "androidx.room:room-testing:$room_version"
     ]
 
 }

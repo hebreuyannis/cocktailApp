@@ -97,4 +97,8 @@ class MainActivity : AppCompatActivity(), NavigationHost, BottomBarBehavior {
         bottom_bar.visibility = View.VISIBLE
     }
 
+    fun invalidateOption() {
+        invalidateOptionsMenu()
+    }
+
 }

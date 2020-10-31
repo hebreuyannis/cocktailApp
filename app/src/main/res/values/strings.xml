@@ -6,7 +6,11 @@
     <string name="generic_issue">An issue has occurred</string>
     <string name="loading_issue">A loading issue has occurred</string>
     <string name="network_issue">A network issue has occurred</string>
+    <string name="wait_until_the_end">Wait until loading is end</string>
+    <string name="add_favorite">Add to favorite</string>
+    <string name="rm_favorite">Remove to favorite</string>
     <string name="retry">RETRY</string>
+    <string name="got_it">GOT IT</string>
     <string name="home">home</string>
     <string name="favorite">favorite</string>
 </resources>

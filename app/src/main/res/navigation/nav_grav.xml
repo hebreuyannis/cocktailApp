@@ -8,7 +8,6 @@
     <fragment
         android:id="@+id/navigation_home"
         android:name="com.hebreuyannis.cocktailapp.ui.HomeFragment"
-        android:label="HomeFragment"
         tools:layout="@layout/layout_home">
         <action
             android:id="@+id/action_navigation_home_to_navigation_drink_detail"
@@ -23,17 +22,13 @@
     <fragment
         android:id="@+id/navigation_favorite"
         android:name="com.hebreuyannis.cocktailapp.ui.FavoriteFragment"
-        android:label="FavoriteFragment"
-        tools:layout="@layout/layout_favorite">
-        <action
-            android:id="@+id/action_navigation_favorite_to_navigation_drink_detail"
-            app:destination="@id/navigation_drink_detail" />
-    </fragment>
+        android:label="Favorite"
+        tools:layout="@layout/layout_favorite"/>
 
     <fragment
         android:id="@+id/navigation_drink_detail"
         android:name="com.hebreuyannis.cocktailapp.ui.DrinkDetailFragment"
-        android:label="DrinkDetailFragment"
+        android:label="Detail"
         tools:layout="@layout/layout_detail_drink">
         <argument
             android:name="drinkPresentation"
