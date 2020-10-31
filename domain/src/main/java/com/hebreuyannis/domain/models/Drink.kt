@@ -8,5 +8,5 @@ data class Drink(
     val typeGlass: String,
     val instruction: String,
     val drinkThumb: String,
-    val ingredients: List<String>
+    var ingredients: List<String>
 )

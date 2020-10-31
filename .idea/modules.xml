@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/CocktailApp.iml" filepath="$PROJECT_DIR$/.idea/modules/CocktailApp.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/CocktailApp.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/CocktailApp.app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/data-local/CocktailApp.data-local.iml" filepath="$PROJECT_DIR$/.idea/modules/data-local/CocktailApp.data-local.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/data-remote/CocktailApp.data-remote.iml" filepath="$PROJECT_DIR$/.idea/modules/data-remote/CocktailApp.data-remote.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/domain/CocktailApp.domain.iml" filepath="$PROJECT_DIR$/.idea/modules/domain/CocktailApp.domain.iml" />
     </modules>

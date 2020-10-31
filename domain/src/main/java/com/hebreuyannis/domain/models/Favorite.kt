@@ -8,5 +8,5 @@ data class Favorite(
     val typeGlass: String,
     val instruction: String,
     val drinkThumb: String,
-    val ingredient: List<Ingredient>
+    val ingredients: List<Ingredient>
 )

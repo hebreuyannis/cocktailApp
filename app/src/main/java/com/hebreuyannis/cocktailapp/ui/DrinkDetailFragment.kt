@@ -5,7 +5,6 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.bumptech.glide.Glide
@@ -13,6 +12,7 @@ import com.hebreuyannis.cocktailapp.CocktailApplication
 import com.hebreuyannis.cocktailapp.R
 import com.hebreuyannis.cocktailapp.SnackbarMessage
 import com.hebreuyannis.cocktailapp.SnackbarMessageManager
+import com.hebreuyannis.cocktailapp.mappers.toDomain
 import com.hebreuyannis.cocktailapp.models.DrinkPresentation
 import com.hebreuyannis.cocktailapp.viewmodel.DetailViewModel
 import kotlinx.android.synthetic.main.layout_detail_drink.*
@@ -43,25 +43,35 @@ class DrinkDetailFragment : MainNavigationFragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        presentation = args.drinkPresentation
+        presentation?.let { setupView(it) }
+        viewModel.isFavorite(presentation!!)
         toolbar.run {
             setMenuItem(R.menu.drink_detail_menu)
 
             setOnMenuItemClickListener {
                 when (it.itemId) {
                     R.id.fav_button -> {
-                        findNavController().navigate(R.id.navigation_drink_detail)
+                        if (!viewModel.isFavorite) {
+                            viewModel.addFavorites(presentation!!.toDomain())
+                        } else {
+                            viewModel.removeFavorite(presentation!!)
+                        }
                         true
                     }
                     else -> false
                 }
             }
         }
-        presentation = args.drinkPresentation
-        presentation?.let { setupView(it) }
+
         setupRecyclerview()
 
         viewModel.command.observe(viewLifecycleOwner, {
             processCommand(it)
+        })
+
+        viewModel.favoriteCommand.observe(viewLifecycleOwner, {
+            processFavoriteCommand(it)
         })
 
         setupSnackbar(
@@ -73,7 +83,6 @@ class DrinkDetailFragment : MainNavigationFragment() {
     }
 
     private fun setupView(presentation: DrinkPresentation) {
-        findNavController().currentDestination?.label = "Detail"
         title_drink.text = presentation.name
         category_drink.text = getString(R.string.category, presentation.category)
         caption_detail.text = presentation.instruction
@@ -100,6 +109,19 @@ class DrinkDetailFragment : MainNavigationFragment() {
             DetailViewModel.Command.Loading -> ingredient_progress_bar.visibility = View.VISIBLE
             is DetailViewModel.Command.Error -> viewModel.snackbarMessage.value =
                 SnackbarMessage(R.string.generic_issue, R.string.retry, true, null)
+        }
+    }
+
+    private fun processFavoriteCommand(favoriteCommand: DetailViewModel.FavoriteCommand) {
+        when (favoriteCommand) {
+            DetailViewModel.FavoriteCommand.IsFavorite -> {
+                toolbar.menu.getItem(0).setIcon(R.drawable.ic_fav)
+                (activity as MainActivity).invalidateOption()
+            }
+            DetailViewModel.FavoriteCommand.IsNotFavorite -> {
+                toolbar.menu.getItem(0).setIcon(R.drawable.ic_no_fav)
+                (activity as MainActivity).invalidateOption()
+            }
         }
     }
 
