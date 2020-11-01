@@ -13,6 +13,7 @@ ext {
     daggerVersion = "2.27"
     glideVersion = "4.11.0"
     room_version = '2.2.5'
+    mockitoKotlinVersion = "2.0.0"
 
 
     appDependencies = [
@@ -55,7 +56,11 @@ ext {
             espresso               : 'androidx.test.espresso:espresso-core:3.3.0',
             daggerKaptProcessorTest: "com.google.dagger:dagger-android-processor:$daggerVersion",
             daggerKaptCompilerTest : "com.google.dagger:dagger-compiler:$daggerVersion",
-            roomTest               : "androidx.room:room-testing:$room_version"
+            roomTest               : "androidx.room:room-testing:$room_version",
+            mockito                : "com.nhaarman.mockitokotlin2:mockito-kotlin:$mockitoKotlinVersion",
+            mockitoCore            : 'org.mockito:mockito-core:3.3.1',
+            coreTesting            : 'android.arch.core:core-testing:1.1.1',
+            coroutineTest          : "org.jetbrains.kotlinx:kotlinx-coroutines-test:$coroutines",
     ]
 
 }

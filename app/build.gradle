@@ -17,7 +17,7 @@ android {
         versionCode 1
         versionName "1.0"
 
-        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        testInstrumentationRunner "com.hebreuyannis.cocktailapp.TestRunner"
     }
 
     buildTypes {
@@ -63,8 +63,13 @@ dependencies {
     // Testing Navigation
     androidTestImplementation testDependencies.navigationFragmentTest
     testImplementation testDependencies.junit
+    testImplementation testDependencies.coroutineTest
+    testImplementation testDependencies.mockitoCore
+    testImplementation testDependencies.mockito
+    testImplementation testDependencies.coreTesting
     androidTestImplementation testDependencies.junitDx
     androidTestImplementation testDependencies.espresso
     kaptAndroidTest testDependencies.daggerKaptProcessorTest
     kaptAndroidTest testDependencies.daggerKaptCompilerTest
+
 }

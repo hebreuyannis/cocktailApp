@@ -7,7 +7,7 @@ import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
 
-class SearchDrinksUseCase(
+open class SearchDrinksUseCase(
     ioDispatcher: CoroutineDispatcher,
     private val drinksRepository: IDrinkRepository
 ) : FlowUseCase<String, List<Drink>>(ioDispatcher) {

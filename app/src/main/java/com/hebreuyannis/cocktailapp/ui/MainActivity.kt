@@ -21,7 +21,6 @@ class MainActivity : AppCompatActivity(), NavigationHost, BottomBarBehavior {
     private lateinit var navController: NavController
     private var navHostFragment: NavHostFragment? = null
 
-
     companion object {
         private val TOP_LEVEL_DESTINATIONS = setOf(
             R.id.navigation_home,

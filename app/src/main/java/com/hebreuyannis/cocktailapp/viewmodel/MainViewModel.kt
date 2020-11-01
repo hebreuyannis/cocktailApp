@@ -28,10 +28,6 @@ class MainViewModel @Inject constructor(
         data class Error(val exception: Exception) : Command()
     }
 
-    init {
-        randomLoad()
-    }
-
     fun randomLoad() {
         viewModelScope.launch {
             getRandomDrinksUseCase.invoke(Unit).collect {
